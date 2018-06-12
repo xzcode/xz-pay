@@ -1,0 +1,18 @@
+
+dependencies {
+	
+	compile project(":${group}-pay-shared")
+	
+	compile group: 'org.jsoup', name: 'jsoup', version: '1.10.3'
+	
+	compile group: 'com.alipay.sdk', name: 'alipay-sdk-java', version: '3.0.52.ALL'
+
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
+	
+	compile group: 'org.apache.commons', name: 'commons-text', version: '1.1'
+	
+	compile group: 'commons-codec', name: 'commons-codec', version: '1.11'
+	
+	
+}
+

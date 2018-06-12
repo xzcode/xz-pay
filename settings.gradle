@@ -1,0 +1,6 @@
+
+rootProject.name = "${group}-pay"
+
+include ":${group}-pay-shared"
+include ":${group}-pay-core"
+include ":${group}-pay-autoconfig"
