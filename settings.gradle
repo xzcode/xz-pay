@@ -1,6 +1,6 @@
 
-rootProject.name = "${group}-pay"
+rootProject.name = "xz-pay"
 
-include ":${group}-pay-shared"
-include ":${group}-pay-core"
-include ":${group}-pay-autoconfig"
+include ":${rootProject.name}-shared"
+include ":${rootProject.name}-core"
+include ":${rootProject.name}-autoconfig"

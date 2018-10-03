@@ -1,7 +1,7 @@
 
 dependencies {
 	
-	compile project(":${group}-pay-shared")
+	compile project(":xz-pay-shared")
 	
 	compile group: 'org.jsoup', name: 'jsoup', version: '1.10.3'
 	
