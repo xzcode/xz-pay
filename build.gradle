@@ -7,13 +7,15 @@ subprojects {
 	group = "${group}"
 	version = "${version}"
 	
+	def profile = System.getProperty("profile")
+	
 	repositories {
-
-		maven {url "${nexusPublicUrl}"}
-		maven {url "${nexusSnapshotsUrl}"}
+		if('test'.equals(profile)){
+			maven {url "${testNexusPublicUrl}"}		
+		}else {
+			maven {url "${nexusPublicUrl}"}	
+		}
 		mavenLocal()
-		mavenCentral()
-		jcenter()
 	}
 	
 	dependencies {
