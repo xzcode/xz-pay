@@ -1,6 +1,6 @@
 
 dependencies {
-	compile group: 'org.springframework.boot', name: 'spring-boot-autoconfigure', version: "2.0.2.RELEASE"
+	compile group: 'org.springframework.boot', name: 'spring-boot-autoconfigure', version: springBootVersion
 	compile project(":xz-pay-core")
 	compile project(":xz-pay-shared")
 }

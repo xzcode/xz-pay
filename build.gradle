@@ -43,34 +43,24 @@ subprojects {
 	        }
 	    }
 	    repositories {
-	        maven {
-	            url "${nexusReleaseUrl}"
-	            credentials {
-		            username = nexusUsername
-		            password = nexusPassword
+	        if('test'.equals(profile)){
+	        	maven {
+		            url version.endsWith('SNAPSHOT') ? "${testNexusSnapshotsUrl}" : "${testNexusReleaseUrl}"
+		            credentials {
+			            username = System.getProperty("nexusUsername")
+			            password = System.getProperty("nexusPassword")
+			        }
+		        }
+	        }else {
+		        maven {
+		            url version.endsWith('SNAPSHOT') ? "${nexusSnapshotsUrl}" : "${nexusReleaseUrl}"
+		            credentials {
+			            username = nexusUsername
+			            password = nexusPassword
+			        }
 		        }
 	        }
 	    }
 	}
-}
-
-//清除 gradle sourcemuch-commons 本地缓存
-task cleanGradleLocalCache  { 
-	doLast{ 
-		File file = new File("${getEnv('GRADLE_USER_HOME')}/caches/modules-2/files-2.1/sourcemuch-commons")
-		file.deleteDir()
-	}
-}
-
-
-task showEnv  { 
-
-	doLast{ 
-		println System.getenv()
-	}
-}
-
-def getEnv(name){ 
-	System.getenv()[name]
 }
 
